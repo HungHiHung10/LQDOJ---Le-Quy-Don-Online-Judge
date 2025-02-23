@@ -1,0 +1,1527 @@
+        // priority_queue<int> MaxHeap;
+        // MaxHeap.push(s[0].first);
+        // MaxHeap.push(s[0].second); 
+        // MaxHeap.push(s[1].first); 
+        // MaxHeap.push(s[1].second); 
+        #include <bits/stdc++.h>
+ 
+using namespace std;
+using ii = pair<int, int>;
+using iii = pair<int, ii>;
+using ll = long long;
+ 
+#define io ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define fi first
+#define se second
+#define pb push_back
+#define task "hli"
+#define Set(A, n) memset(A, n, sizeof(A))
+#define all(v) v.begin(), v.end()
+#define allr(v) v.rbegin(), v.rend()
+
+template <class T1, class T2> istream& operator>> (istream& in, pair <T1, T2>& a){ in >> a.first >> a.second; return in; }
+template <class T> istream& operator>> (istream& in, vector <T>& a){ for (auto &x: a){ in >> x; } return in; }
+
+struct cmp
+{
+    bool operator()(ii A, ii B)
+    {
+        if (A.first == B.first)
+        {
+            return A.second > B.second;
+        }
+        return A.first > B.first;
+    }
+};
+
+int main()
+{
+    io
+    
+    if (fopen(task".txt","r"))
+    {
+        freopen(task".INP", "r", stdin);
+        freopen(task".OUT", "w", stdout);
+    }
+    
+    priority_queue<ii, vector<ii>, cmp> pq;
+
+    int n, h; cin >> n >> h;
+    for (int i = 0; i < n; i++)
+    {
+        pair<int, int> p; 
+        cin >> p;
+
+        pq.push(p);
+    } 
+
+    ll res;
+    auto top = pq.top();
+
+    res = 1ll * (h / top.first);
+
+    cout << res;
+    cerr << "Time run: " << 1000*clock()/CLOCKS_PER_SEC << "ms\n";
+}
+// priority_queue<ii, vector<ii>, cmp> pq;
+
+    // int n, h; cin >> n >> h;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     pair<int, int> p; 
+    //     cin >> p;
+
+    //     pq.push(p);
+    // } 
+
+    // ll res;
+    // auto top = pq.top();
+    // //cout << top.first << " " << top.second << endl;
+    
+    // if (n == 1)
+    // {
+    //     if (!(h % top.first))
+    //     {
+    //         res = 1ll * h / top.first - 1;
+    //     }
+    //     else res = 1ll * h / top.first;
+    // }
+    // else res = 1ll * (h / top.first);
+
+    // cout << res;
+    
+    // struct cmp
+
+// {
+//     bool operator()(ii A, ii B)
+//     {
+//         if (A.first == B.first)
+//         {
+//             return A.second < B.second;
+//         }
+//         return A.first < B.first;
+//     }
+// };
+//     if (!(H % s[0].first))
+    //     {
+    //         res = H / s[0].first - 1;
+    //     }
+    //     else res = H / s[0].first;
+
+    //     cout << res;
+    // else if (N == 2)
+    // {
+    //     while (H > 0)
+    //     {
+    // vector<bool> flg(n, false);
+    // flg[1] = true;
+    //         H -=
+    //     }
+    // }
+            // if (!flg[i-1]){
+        //     dp[i] = a[i] + max(dp[i-1], dp[i-2]);
+        //     flg[i] = (bool)(dp[i-1] > dp[i-2]);
+        // }
+        // else {
+        //     // if (a[i-1] < a[i-2]){
+        //     //     dp[i-1] += a[i-2] - a[i-1];
+        //     // }
+        //     // dp[i] = find_max({dp[i-1] - min(a[i-1], a[i-2]), dp[i-2]});
+        //     dp[i] = a[i] + max({dp[i-1] - min({a[i-1], a[i-2], a[i]}), dp[i-2]});
+        // }
+        // res = max(res, dp[i]);
+            // for (ll v : dp){
+    //     cout << v << " ";
+    // }
+    ll res = LLONG_MIN;
+    // cout << endl << res;
+    //         // auto previous = iter;
+        // while (!index[iter->first + 1].empty() && index[iter->first + 1] > iter->second[iter->second.size()]) {
+            
+        //     iter++;
+        // }
+        // iter = previous;
+        //template<typename dataType>
+// dataType find_max(std::initializer_list<dataType> elements) {
+//     return *std::max_element(elements.begin(), elements.end());
+// }
+    // for (int neighbor : listA[vertex].vertices)
+    // {
+    //     distance[neighbor] = min(distance[neighbor], distance[vertex] + 1);
+    // }
+    // queue<int> vertex;
+    // while (!vertex.empty()) {
+    //     if (!visited[vertex.front()]) {
+    //         distance[] = min(distance[start] + 1, distance[vertex.front()]);
+
+    //     }
+    // }
+    // for (int i )
+        // for (int neighbor : listA[S].vertices)
+    // {
+    //     distance[neighbor] = 1;
+    //     visited[neighbor] = true;
+    //     BFS(listA, distance, res, neighbor, S);
+    // }
+    // for (int i = 1; i <= N; i++) {
+    //     if (!visited[i]) {
+    //         BFS(listA, distance, i, S);
+    //     }
+    // }
+
+    // for (int i = 1; i < N + 1; i++) {
+    //     if (distance[i] != INT_MIN) res.push_back(make_pair(i, distance[i]));
+    // }
+
+    // for (int i = 1; i < N + 1; i++)
+    // {
+    //     cout << i << " " << distance[i] << endl;
+    // }
+            // int vertex = que.front();
+        // if (distance[vertex] == INT_MIN) {
+        //     for (int neighbor : listA[vertex].vertices) {
+        //         distance[neighbor] = min(distance[neighbor], distance[vertex] + 1);
+        //         que.push(neighbor);
+        //     }
+        // }
+        // else {
+        //     que.pop();
+        // }
+            // for (int i = 1; i < N + 1; i++)
+    // {
+    //     cout << i << ": ";
+    //     for (int neighbor : listA[i].vertices)
+    //     {
+    //         cout << neighbor << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // // Base case
+    // distance[S] = 0;
+    // res.push_back(make_pair(S, 0));
+                    // if ()
+                // {
+                // }
+        // if (i)
+        // {
+        //}
+        // else
+        // {
+        //     stk.push(x[0]);
+        //     cout << 0 << " ";
+        // }
+    // for (auto iter = index.begin(); iter != index.end(); iter++)
+    // {
+    //     cout << iter->first << ": ";
+    //     for (int i : iter->second)
+    //     {
+    //         cout << i << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // stack<int> stk;
+    // int i = 0;
+    // stk.push(x[0]);
+    // cout << 0;
+    // while (!stk.empty())
+    // {
+
+    // }
+    // int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     #ifndef ONLINE_JUDGE
+//         freopen("robot.inp", "r", stdin);
+//         freopen("robot.out", "w", stdout);
+//     #endif
+//     int N, M;
+//     cin >> N >> M;
+
+//     // vector<vector<ll>> dp(N, vector<ll>(N, 0));
+//     // int pos_x, pos_y;
+//     // for (int i = 0; i < M; i++){
+//     //     cin >> pos_x >> pos_y;
+//     //     dp[pos_x-1][pos_y-1] = -1;
+//     // }
+//     cout << N << M;
+//     return 0;
+// }
+// #include <bits/stdc++.h>
+//     using ll = long long;
+// using ull = unsigned long long;
+// using namespace std;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     #ifndef ONLINE_JUDGE
+//         freopen("robot.inp", "r", stdin);
+//         freopen("robot.out", "w", stdout);
+//     #endif
+//     int N, M;
+//     cin >> N >> M;
+
+//     // vector<vector<ll>> dp(N, vector<ll>(N, 0));
+//     // int pos_x, pos_y;
+//     // for (int i = 0; i < M; i++){
+//     //     cin >> pos_x >> pos_y;
+//     //     dp[pos_x-1][pos_y-1] = -1;
+//     // }
+//     cout << N << M;
+//     return 0;
+// }
+// bool check = false;
+// for (int i = 1; i <= N; i++)
+// {
+//     if (!visited[i])
+//     {
+//         if (check)
+//         {
+//             cout << "YES\n";
+//             continue;
+//         }
+//         DFS(listAdj, visited, i);
+//         check = true;
+//     }
+// }
+// cout << "NO\n";
+// component[i].insert(i);
+// vector<set<int>> component(N + 1);
+// for (int i = 0; i < component.size(); i++)
+// {
+//     cout << i << ": ";
+//     for (auto iter = component[i].begin(); iter != component[i].end(); iter++)
+//     {
+//         cout << *iter;
+//     }
+//     cout << endl;
+// }
+
+// while (T--)
+// {
+//     cin >> start >> end;
+//     for (int i = 1; i <= N; i++)
+//     {
+//         if (component[i].size() && component[i].find(start) != component[i].end() && component[i].find(end) != component[i].end())
+//         {
+//             cout << "YES\n";
+//         }
+//     }
+//     cout << "NO\n";
+//     // if (DFS(listAdj, start, end))
+//     // {
+//     //     cout << "YES\n";
+//     // }
+//     // else
+//     // {
+//     //     cout << "NO\n";
+//     // }
+// }
+// vector<Adjacency> revG(N + 1);
+    // revG[v].vertices.insert(u);
+    // stack<int> topo;
+    // stack<int> revtopo;
+    // vector<bool> visited(N + 1, false);
+    // for (int i = 1; i <= N; i++)
+    // {
+    //     if (!visited[i])
+    //         DFS(G, visited, i, topo);
+    // }
+    // fill(visited.begin(), visited.end(), false);
+    // for (int i = 1; i <= N; i++)
+    // {
+    //     if (!visited[i])
+    //         DFS(revG, visited, i, revtopo);
+    // }
+    // vector<int> res;
+    // while (!topo.empty())
+    // {
+    //     // cout << topo.top() << " " << revtopo.top() << endl;
+    //     if (topo.top() != revtopo.top())
+    //     {
+    //         while (!topo.empty())
+    //         {
+    //             res.push_back(topo.top());
+    //             topo.pop();
+    //         }
+    //         cout << res;
+    //         return 0;
+    //     }
+    //     res.push_back(topo.top());
+    //     topo.pop();
+    //     revtopo.pop();
+    // }
+    // cout << "IMPOSSIBLE";
+    // vector<pair<int, int>> res;
+    // int prev = 0;
+    // for (int i = 1; i <= N; i++)
+    // {
+    //     if (!visited[i])
+    //     {
+    //         if (prev)
+    //         {
+    //             res.push_back(make_pair(prev, i));
+    //         }
+    //         prev = i;
+    //         DFS(G, visited, i);
+    //     }
+    // }
+    // cout << res.size() << endl;
+    // for (lui i = 0; i < res.size(); i++)
+    // {
+    //     cout << res[i].first << " " << res[i].second << endl;
+    // }
+        // string str;
+    // cin >> str;
+    // cout << str;
+    // string n;
+    // cin >> n;
+    // char lastDigit = n.back();
+    // n.pop_back();
+            // cout << i << " " << j << ": " << dp[i - j] + (ll)abs(h[i] - h[i - j]) << endl;
+    // cout << lastDigit << " " << n;
+//         // cout << index[i] << " " << index[i - 1] << endl;
+                    // cout << k[h] << " ";
+                // for (int x : sub)
+                // {
+                //     cout << x << " ";
+                // }
+                // cout << endl;
+                // // // cout << i << " " << j << endl;
+                // // cout << "subarray: "; //" : " << sub.size() << endl;
+                // // cout << "size: " << sub.size() << endl;
+// else
+    // {
+    //     map<int, int> last;
+    //     int left = 0;
+    //     int right = 1;
+    //     last[k[left]] = 0;
+    //     last[k[right]] = 1;
+    //     while (right < n)
+    //     {
+
+    //         cout << "left: " << left << " " << "right: " << right << endl;
+    //         while (right < n && last[k[right]] >= left && last[k[right]] != right)
+    //         {
+    //             left = last[k[right]];
+    //             last[k[right]] = right;
+    //             right = max(left + 1, right + 1);
+    //             last[k[left]] = left;
+    //             last[k[right]] = right;
+    //             cout << "inside " << left << " " << right << endl;
+    //             cout << "last " << last[k[right]] << endl;
+    //             if (!(last[k[right]] >= left && last[k[right]] != right))
+    //                 res = max(res, (ll)(right - left + 1));
+    //             // res = max(res, (ll)(right - left + 1));
+    //             right++;
+    //         }
+    //         last[k[right]] = right;
+    //         if (right < n)
+    //             res = max(res, (ll)(right - left + 1));
+    //         right++;
+    //         // if (last)
+    //         // {
+
+    //         // }
+    //     }
+    // }
+    // if (Subtask == '3')
+// map<int, int> index;
+        // for (int i = 0; i < n; i++)
+        // {
+        //     if (!index[a[i]])
+        //     {
+        //         index[a[i]] = i + 1;
+        //     }
+        // }
+        // while (m--)
+        // {
+        //     cin >> t;
+        //     auto iter = index.upper_bound(t);
+        //     if (iter == index.begin())
+        //     {
+        //         cout << 0 << endl;
+        //     }
+        //     else if (iter == index.end())
+        //     {
+        //         cout << n << endl;
+        //     }
+        //     else
+        //     {
+        //         int res = iter->second - 1;
+        //         for (auto it = ++iter; it != index.end(); it++)
+        //         {
+        //             res = min(res, it->second - 1);
+        //         }
+        //         cout << res << endl;
+        //     }
+        // }
+            // return -1;
+    // if (left > right)
+    // {
+    //     return -1;
+    // }
+    // int middle = (left + right) / 2;
+    // if (x[middle] == m)
+    // {
+    //     return binarySearch(x, m, middle)
+    // }
+    // else 
+    // {
+
+    // }
+        //int prev = 0;
+// Online C++ compiler to run C++ program online
+    //prev = last[k[j]];
+                // if (n & 1)
+            // {
+            //     ll mul = (ll)(a[n - 2]) * (ll)a[n - 1];
+            //     ans = ((ans % MOD) * (mul % MOD)) % MOD;
+            // }
+            // else
+                    // cout << "here we go!\n";
+            // cout << ans << endl;
+                // cout << a[i] << " </> " << a[i + 1] << endl;
+                // void heapify(vector<int> a, int n, int i)
+// {
+//     int left = i * 2 + 1;
+//     int right = i * 2 + 2;
+//     int largest = i;
+//     if (left < n && a[left] < a[largest])
+//     {
+//         largest = left;
+//     }
+//     if (right < n && a[right] < a[largest])
+//     {
+//         largest = right;
+//     }
+//     if (largest != i)
+//     {
+//         swap(a[largest], a[i]);
+//         heapify(a, n, largest);
+//     }
+// }
+// void heapSort(vector<int> &a, int n)
+// {
+//     for (int i = n / 2 - 1; i >= 0; i--)
+//     {
+//         heapify(a, n, i);
+//     }
+//     for (int i = n - 1; i > 0; i--)
+//     {
+//         swap(a[i], a[0]);
+//         heapify(a, i, 0);
+//     }
+// }    // ll res = 1LL;
+    // vector<ll> prefix(n);
+    // prefix[0] = x[0];
+    // if (x[0] != 1)
+    // {
+    //     cout << res;
+    //     return 0;
+    // }
+    // freq[0] = 1;
+    // for (int i = 1; i < n; i++)
+    // {
+    //     freq[x[i]]++;
+    //     prefix[i] += x[i] + prefix[i - 1];
+    //     for (int j = res; j < prefix[i]; j++)
+    //     {
+    //         if (!freq[prefix[i] - j])
+    //         {
+    //             cout << j;
+    //             return 0;
+    //         }
+    //     }
+    //     res = prefix[i] + 1;
+    // } 
+    // for (int& x : a)
+    // {
+    //     cin >> x;
+    // }
+    
+    // map<int, int> index;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     index[a[i]] = i;
+    // }
+        // cout << "half: " << half << endl;
+        // cout << sum << endl;
+        // map<int, bool> square;
+        // for (int i = 1; i <= 1000; i++)
+        // {
+        //     square[i * i] = true;
+        // }
+        // map<int, ll> frequence;
+        // int count = 0;
+        // for (int i = 0; i < n; i++)
+        // {
+        //     if (square[a[i]])
+        //     {
+        //         count++;
+        //     }
+        //     frequence[a[i]]++;
+        // }
+        // // cout << "count: " << count << endl;
+        // for (auto iter = frequence.begin(); iter != frequence.end(); iter++)
+        // {
+        //     if (square[iter->first])
+        //     {
+        //         count -= iter->second;
+        //         res += iter->second * count;
+        //     }
+        //     else
+        //     {
+        //         auto itr = iter++;
+        //         --iter;
+        //         for (auto it = itr; it != frequence.end(); it++)
+        //         {
+        //             if (it != iter)
+        //             {
+        //                 ll num = (ll)iter->first * (ll)it->first;
+        //                 if (square[num])
+        //                 {
+        //                     // cout << iter->first << " " << it->first << endl;
+        //                     res += iter->second * it->second;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     res += (iter->second - 1) * (iter->second) / 2;
+        //     // cout << "res: " << res << endl;
+        // }
+        // cout << res;
+        for (int iter = ; iter != )
+        
+            // // analysisFactor(factor, a[i], i);
+            // string ans = analysisFactor(a[i]);
+            // // cout << "ans: " << ans << endl;
+            // factor[ans]++;
+        // for (string divisor : factor)
+        // {
+        //     cout << divisor << endl;
+        // }
+        // sort(factor.begin(), factor.end());
+        // for (auto iter = factor.begin(); iter != factor.end(); iter++)
+        // {
+        //     // cout << iter->first << endl;
+        //     res += (iter->second) * (iter->second - 1) / 2;
+        // }
+        // for (int i = 0; i < n; i++)
+        // {
+
+        // }
+        
+    // string factor = "";
+    // int prev;
+    // int p = 0;
+    // for (int i = 2; i * i <= n; i++)
+    // {
+    //     p = 0;
+    //     while (n % i == 0)
+    //     {
+    //         prev = i;
+    //         p++;
+    //         n /= i;
+    //     }
+    //     if (p & 1)
+    //     {
+    //         factor += to_string(i) + " ";
+    //     }
+    // }
+    // if (p & 1)
+    // {
+    //     factor += to_string(prev) + " ";
+    // }
+    // if (n > 1 && !p & 1)
+    // {
+    //     factor += to_string(n) + " ";
+    // }
+    // return factor;
+    
+// void analysisFactor(vector<string> &factor, int n, int i)
+// {
+//     int prev = 0;
+//     int p = 0;
+//     for (int i = 2; i * i <= n; i++)
+//     {
+//         p = 0;
+//         while (n % i == 0)
+//         {
+//             prev = i;
+//             p++;
+//             n /= i;
+//         }
+//         if (p & 1)
+//         {
+//             factor[i] = to_string(i) + " ";
+//         }
+//     }
+//     if (p & 1)
+//     {
+//         factor[i] = to_string(prev) + " ";
+//     }
+//     if (n > 1 && !p & 1)
+//     {
+//         factor[i] = to_string(n) + " ";
+//     }
+// }
+        // vector<string> factor(n);
+                // => a, b khi pttsnt có trùng cơ số có mũ bậc lẻ.
+        // => a, b khi pttsnt có tất cả cơ số có mũ bậc chẵn. 
+        // int sz = T.size();
+    // for (int i = 0; i < sz; i++)
+    // {
+    //     if (T[i] >= '0' && T[i] <= '9')
+    //     {
+    //         cout << T[i] << endl;
+    //         int j = i;
+    //         for (j; T[j] >= '0' && T[j] <= '9'; j++)
+    //         {
+    //             // cout << (T.substr(i, j + 1)) << endl;
+    //             // res = max(res, num);
+    //             int num = stoi(T.substr(i, j - i + 1));
+
+    //             cout << num << endl;
+    //             if (!p[num])
+    //                 res = max(res, num);
+    //         }
+    //         i = j;
+    //     }
+    // }
+    // cout << res;
+    // for (char &let : T)
+    // {
+    //     if (let < '0' || let > '9')
+    //     {
+    //         let = ' ';
+    //     }
+    // }
+    // cout << T << endl;
+
+    // stringstream ss(T);
+    // int i = 0;
+    // string num;
+    // while (ss >> num)
+    // {
+    //     n[i++] = stoi(num);
+    //     cout << "prev: " << n[i - 1] << " ";
+    // }
+    // for (int ii = 0; ii < i; ii++)
+    // {
+    //     cout << "num: " << n[ii] << endl;
+    //     // for (int i = 0; i < n[i].size(); i++)
+    //     // {
+    //     //     for (int j = 1; j <= n[i].size(); j++)
+    //     //     {
+    //     //         int dec = stoi(n[i].substr(i, j));
+    //     //         cout << "dec: " << dec << endl;
+    //     //         if (!p[dec])
+    //     //         {
+    //     //             res = max(res, dec);
+    //     //         }
+    //     //     }
+    //     // }
+    // }
+    // cout << res;
+    // // size_t size = T.size();
+    // // for (size_t i = 0; i < size; i++)
+    // // {
+    // //     for (size_t size j = i + 1)
+    // // }
+        // map<int, vector<int>> sum;
+    // prefix[0] = (ll)A[0];
+    // sum[prefix[0]].push_back(0);
+    // for (int i = 1; i < N; i++)
+    // {
+    //     prefix[i] = prefix[i - 1] + (ll)A[i];
+    //     if (sum[A[i]].size())
+    //     {
+    //         for (int index : sum[A[i]])
+    //         {
+    //             if (index)
+    //             {
+    //                 res = max(res, prefix[i] - prefix[index] + (ll)A[index]);
+    //             }
+    //             else
+    //             {
+    //                 res = max(res, prefix[i]);
+    //             }
+    //         }
+    //     }
+    //     sum[A[i]].push_back(i);
+    // }
+    // for (ll sum : prefix)
+    // {
+    //     cout << sum << " ";
+    // }
+        // ll n;
+    // cin >> n;
+        // ll q = MAX / 3 + MAX / 5 + MAX / 7 - MAX / 15 - MAX / 21 - MAX / 35 + MAX / 105;
+    // //cout << q;
+    // vector<ll> res;
+    // res
+    // for (int i = 1; i <= q; i++)
+    // {
+    //     res.push_back((ll)(3 * i));
+    // }
+    // res
+    // for (int i = 0; i < 3; i++)
+    // {
+    //     for (int j = 0; j < 3; j++)
+    //     {
+    //         cout << table[i][j] << ' ';
+    //     }
+    //     cout << endl;
+    // }
+    // cout << endl;
+    // ll sum = -INT ;
+    // ll S = 0;
+    // for (int i = 0; i < 3; i++)
+    // {
+    //     sum = table[i][0];
+    //     for (int j = 1; j < 3; j++)
+    //     {
+    //         sum += table[i][j];
+    //         // prefix[0][] += ;
+    //         // prefix[][] += ;
+    //     }
+    //     S = sum;
+    //     cout << sum << " ";
+    // }
+    
+    // vector<string> S(str.size());
+        // cout << " " << s << " " << endl;
+        // cout << str << endl;
+    // sort(S.begin(), S.end());
+    // for (string res : S)
+    // {
+    //     cout << res << " ";
+    // }
+    // cout << S[0] << endl;
+        // if (vertex == visited.size() - 1)
+    // {
+    //     res.push(vertex);
+    //     success = true;
+    //     return;
+    // }
+    
+        // if (success = true)
+        // {
+        //     return;
+        // }
+        
+    // cout << endl;
+    // for (int i = 1; i <= n; i++)
+    // {
+    //     cout << i << " -> ";
+    //     for (int j : listA[i].vertices)
+    //     {
+    //         cout << j << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // vector<bool> visited(n + 1, false);
+    // stack<int> res;
+    // for (int vertex : listA[1].vertices)
+    // {
+    //     stack<int> topo;
+    //     topologicalSort(listA, visited, topo, vertex);
+    //     res = Max(res, topo);
+    //     fill(visited.begin(), visited.end(), false);
+    // }
+    // // topologicalSort(listA, visited, res, 3);
+    // res.push(1);
+    // while (!res.empty())
+    // {
+    //     cout << res.top() << ' ';
+    //     res.pop();
+    // }
+        //     n -= k;
+    //     n += k - 1;
+    //     k = n;
+    //     // n = n + k - 1;
+    // ll h = n - k;
+    // n -= k;
+    // n = h + n - 1;
+    // k = h;
+    // ll A = 0LL;
+// ll B = 0LL;
+// void inp()
+// {
+//     int n, m, ai, bi;
+//     cin >> n >> m;
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> ai;
+//         if (i)
+//             A = (A % MOD * ai % MOD) % MOD;
+//         else
+//             A = ai;
+//     }
+//     for (int j = 0; j < m; j++)
+//     {
+//         cin >> bi;
+//         if (j)
+//             B = (B % MOD * bi % MOD) % MOD;
+//         else
+//             B = bi;
+//     }
+// }
+// ll GCD(ll A, ll B)
+// {
+//     if (A == 0)
+//     {
+//         return B;
+//     }
+//     return (B, A % B);
+// }
+// void sol()
+// {
+//     cout << GCD(A, B);
+// }
+
+            // gcd = gcd * power(i, (ll)min((ll)A[i], (ll)B[i]));
+        // for (auto iter = A.begin(); iter != A.end(); iter++)
+        // {
+        //     gcd = ;
+        // }
+        // for (auto iter = B.begin(); iter != B.end(); iter++)
+        // {
+
+        // }
+    // for (auto iter = flag.begin(); iter != flag.end(); iter++)
+    // {
+    //     if (iter->second)
+    //     {
+    //         gcd = (gcd % MOD * power(iter->first, (ll)min((ll)A[iter->first], (ll)B[iter->first])) % MOD) % MOD;
+    //     }
+    // }
+    // int n;
+    // cin >> n;
+    // init();
+    // factorize(A, n);
+    
+
+    // for (auto iter = A.begin(); iter != A.end(); iter++)
+    // {
+    //     cout << iter->first << " " << iter->second << endl;
+    // }
+    // cout << "\n----------\n";
+    // for (auto iter = B.begin(); iter != B.end(); iter++)
+    // {
+    //     cout << iter->first << " " << iter->second << endl;
+    // }
+    // cout << power(2, 10);
+    // init();
+    // Không cần (res % MOD) vì res luôn nhỏ hơn MOD// Nhân a với chính nó và lấy mod
+        b >>= 1;           // Dịch bit phải
+        // vector<int> a(N);
+    // for (int &ai : a)
+    // {
+    //     cin >> ai;
+    // }
+    // vector<int> res;
+    // for (int i = 1; i <= M; i++)
+    // {
+    //     bool check = true;
+    //     for (int j = 0; j < N; j++)
+    //     {
+    //         if (gcd(a[j], i) != 1)
+    //         {
+    //             check = false;
+    //             break;
+    //         }
+    //     }
+    //     if (check)
+    //         res.push_back(i);
+    // }
+    // cout << res.size() << endl;
+    // for (int x : res)
+    // {
+    //     cout << x << "\n";
+    // }
+        // for (int i = 0; i < N; i++)
+    // {
+    //     cout << prefixSum[i] << " ";
+    // }
+    // ll sum = 0LL;
+    // ll neg = 0LL;
+    // ll res = 0LL;
+    // for (int i = 0; i < N; i++)
+    // {
+    //     cin >> a[i];
+    //     sum += abs(a[i]);
+    //     if (a[i] < 0)
+    //         neg++;
+    // }
+    // cout << "\nneg: " << neg << endl;
+    // cout << "\nsum: " << sum << endl;
+    // for (int i = 0; i < N - 1; i++)
+    // {
+    //     sum -= abs(a[i]);
+    //     res += abs((N - 1 - i) * abs(a[i]) - sum);
+    //     if (res == 1)
+    //     {
+    //         res += (N - 1 - i) * abs(a[i]);
+    //     }
+    //     else if (res > 1)
+    //     {
+    //         res -= (N - 1 - i) * abs(a[i]);
+    //     }
+    //     cout << "\nres: " << res << endl;
+    //     // else if (neg == 1)
+    //     // {
+    //     //     res += 4 * abs(a[i]);
+    //     // }
+    //     if (a[i] < 0)
+    //         neg--;
+    // }
+    // cout << res;
+    // for (int i = 1; i < n; i++)
+    // // {
+    // //     max_a = max(max_a, );
+    // // }
+    // c[0] = (ll)a[0] * (ll)b[0];
+    // int index_a = 0;
+    // int index_b = 0;
+    // int prev_a = 0;
+    // int index = 0;
+    // for (int i = 1; i < n; i++)
+    // {
+    //     // if (b[index_b] <= b[i])
+    //     // {
+    //     //     if (a[index_a] < a[i])
+    //     //     {
+    //     //         index_a = i;
+    //     //     }
+    //     //     c[i] = (ll)a[index_a] * (ll)b[i];
+    //     //     index_b = i;
+    //     // }
+    //     // else
+    //     // {
+    //     //     if (prev_a <= index_b && a[prev_a] > a[index_a])
+    //     //     {
+    //     //         index_a = prev_a;
+    //     //     }
+    //     //     c[i] = max({(ll)a[i] * (ll)b[i], (ll)a[index_a] * (ll)b[index_b], (ll)a[index_a] * (ll)b[i], c[i - 1]});
+    //     //     if (a[prev_a] < a[i])
+    //     //     {
+    //     //         prev_a = i;
+    //     //     }
+    //     // }
+    //     // if (i >= index) Max_a = a[index];
+    //     // Max_a = max((ll)a[i], Max_a);
+    //     // if (Max_a < a[i])
+    //     // {
+    //     //     if (Max_b <= b[i])
+    //     //     {
+    //     //         c[i] = (ll)a[i] * (ll)b[i];
+    //     //         index = i;
+    //     //     }
+    //     //     else
+    //     //     {
+    //     //         c[i] = max(Max_a * Max_b, (ll)a[i] * (ll)b[i]);
+    //     //     }
+    //     //         Max_a = (ll)a[i];
+    //     //     index = i;
+    //     // }
+    //     // else
+    //     // {
+    //     //     Max_b = max(Max_b, (ll)b[i]);
+    //     //     c[i] = Max_a * Max_b;
+    //     // }
+    //     //     c[i] = max(Max_a * Max_b, a[i] * )
+    //     // // Max_b = max((ll)b[i], Max_b);
+    //     // c[i] = max((ll)a[i] * (ll)b[i], Max_a * Max_b);
+    // }
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << c[i] << '\n';
+    // }
+    
+// ll nCk(ll n, ll k)
+// {
+//     if (k == 0 || k == n)
+//     {
+//         return 1;
+//     }
+//     if (k == 1 || k == n - 1)
+//     {
+//         return n % MOD;
+//     }
+//     return (nCk(n - 1, k - 1) % MOD + nCk(n - 1, k) % MOD) % MOD;
+// }
+// ll C[MAX][MAX];
+// ll nCk(ll n, ll k)
+// {
+//     for (int i = 0; i <= n; i++)
+//     {
+//         for (int j = 0; j <= min(n, k); j++)
+//         {
+//             if (k == 0 || k == n)
+//             {
+//                 C[i][j] = 1;
+//             }
+//             else if (k == 1 || k == n - 1)
+//             {
+//                 C[i][j] = n % MOD;
+//             }
+//             else
+//             {
+//                 C[i][j] = (C[i - 1][j - 1] % MOD + C[i - 1][j] % MOD) % MOD;
+//             }
+//         }
+//     }
+//     return C[n][k];
+// }
+// ll fact[100001], invFact[100001];
+// ll power(ll x, ll y, ll p)
+// {
+//     ll res = 1;
+//     x = x % p;
+//     while (y > 0)
+//     {
+//         if (y & 1)
+//             res = (res * x) % p;
+//         y = y >> 1;
+//         x = (x * x) % p;
+//     }
+//     return res;
+// }
+
+// // Tiền xử lý tính giai thừa và giai thừa ngược với MOD
+// void precomputeFactorials(ll maxN)
+// {
+//     fact[0] = 1;
+//     for (ll i = 1; i <= maxN; i++)
+//         fact[i] = fact[i - 1] * i % MOD;
+//     invFact[maxN] = power(fact[maxN], MOD - 2, MOD);
+//     for (ll i = maxN - 1; i >= 0; i--)
+//         invFact[i] = invFact[i + 1] * (i + 1) % MOD;
+// }
+
+// // Hàm tính tổ hợp C(n, k) % MOD
+     // factorial[i] = factorial[i - 1] * (ll)i;
+    // return (((factorial[n] / factorial[k]) % MOD) * (factorial[n - k] % MOD)) % MOD;
+    // return (factorial[n] % MOD) / ((factorial[k] % MOD * factorial[n - k] % MOD) % MOD);
+    
+    // int ele = a[0];
+    // while (right < n)
+    // {
+    //     while (difference <= k && right < n)
+    //     {
+    //         difference += (bool)(Index[a[right]] < left + 1);
+    //         if (difference > k)
+    //         {
+    //             // ele = ;
+    //             break;
+    //         }
+    //         Index[a[right]] = right + 1;
+    //         if (right - left + 1 > res)
+    //         {
+    //             resl = left;
+    //             resr = right;
+    //             res = right - left + 1;
+    //         }
+    //         right++;
+    //     }
+    //     set<int> unique;
+    //     while (difference > k && left <= right && left < n)
+    //     {
+    //         difference -= (bool)(unique.find(a[left]) == unique.end());
+    //         if (difference <= k)
+    //         {
+    //             break;
+    //         }
+    //         unique.insert(a[left]);
+    //         left++;
+    //     }
+    // ele = ;
+    // right = left + 1;
+    // if (diff > k)
+    // {
+    //     left++;
+    //     if (left == right)
+    //     {
+    //         right++;
+    //     }
+    // }
+    // if (index[a[right]] >= left)
+    // {
+
+    // }
+    // else
+    // {
+    //     left++
+    // }
+    //}
+        // cout << endl;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << a[i] << " ";
+    // }
+    // cout << endl;
+    // Index[a[left]] = 1;
+    // Index[a[right]] = 2;
+    
+        // set<int> unique;
+        // while (difference > k && left <= right)
+        // {
+        //     frequence[a[left]]--;
+        //     cout << (bool)(unique.find(a[left]) == unique.end()) << " left: " << left << endl;
+        //     if (unique.find(a[left]) == unique.end())
+        //     {
+        //         difference--;
+        //     }
+        //     unique.insert(a[left]);
+        //     left++;
+        // }
+             // Phần tử a[left] không còn trong khoảng
+         // Thu hẹp cửa sổ từ trái
+        // if (difference > k)
+        // {
+        //     while (difference && left <= right)
+        //     {
+
+        //     }
+        // }
+        // for (int i = 0; i < m; i++)
+    // {
+    //     cout << loss[i] << ' ';
+    // }
+    // for (int i = 0; i < n; i++)
+    // {
+    //     if (c[i] == loss[0])
+    //     {
+    //         cout << c[i] << " ";
+    //         loss[0] = 0;
+    //     }
+    //     else if (c[i] == loss[1])
+    //     {
+    //         cout << c[i] << " ";
+    //         loss[1] = 0;
+    //     }
+    //     else
+    //     {
+    //         cout << c[i] << " ";
+    //     }
+    // }
+    // void Dijkstra(vector<vector<pair<int, int>>> &G, vector<bool> &marked, vector<long long> &distance, vector<int> &parent)
+// {
+//     priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>> PQueue;
+//     PQueue.push({0LL, 1});
+//     distance[1] = 0;
+//     while (!PQueue.empty())
+//     {
+//         pair<long long, int> dv = PQueue.top();
+//         PQueue.pop();
+//         if (marked[dv.second])
+//         {
+//             continue;
+//         }
+//         marked[dv.second] = true;
+//         for (auto vw : G[dv.second])
+//         {
+//             if (dv.first + vw.second < distance[vw.first])
+//             {
+//                 distance[vw.first] = dv.first + vw.second;
+//                 PQueue.push({distance[vw.first], vw.first});
+//                 parent[vw.first] = dv.second;
+//             }
+//         }
+//     }
+// }
+    // vector<int> parent(n + 1, 0);
+    // for (int i = 1; i <= n; i++)
+    // {
+    //     cout << distance[i] << " ";
+    // }
+    // long long max_weighted = LLONG_MIN;
+    // for (int i = n; i != 1; i = parent[i])
+    // {
+    //     max_weighted = max(distance[i] - distance[parent[i]], max_weighted);
+    //     // cout << i << "<-";
+    // }
+    // // cout << endl
+    // //      << distance[n] << endl;
+    // cout << distance[n] - max_weighted + (long long)(max_weighted / 2);
+        // for (int v = 1; v <= n; v++)
+    // {
+    //     for (int dist : Distance[])
+    //     {
+    //         cout << dist << " ";
+    //     }
+    //     cout << endl;
+    // }
+        // vector<long long> distance(n + 1, oo);
+    // Distance.push_back(distance);
+        // Distance.push_back(distance);
+        // fill(distance.begin(), distance.end(), oo);
+            // cout << "Size: " << distance.size() << endl;
+    // cout << "size: " << distance[0].size() << endl;
+    // for (int i = 1; i <= n; i++)
+    // {
+    //     for (int j = 0; j <= k; j++)
+    //     {
+    //         cout << distance[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+        // for (auto D : distance)
+    // {
+    //     cout << D << " ";
+    // }
+        // print
+    // for (int i = 1; i < n; i++)
+    // {
+    //     cout << "vertex " << i << endl;
+    //     for (auto [j, w] : G[i])
+    //     {
+    //         cout << '\t' << j << " " << w << endl;
+    //     }
+    //     cout << endl;
+    // }
+        // for (ll dist : distance)
+    // {
+    //     cout << dist << " ";
+    // }
+    // void DFS(vector<vector<int>>&G, int N, vector<bool> &visited, int vertex)
+// {
+//     if ()
+// }
+    // fill(visited.begin(), visited.end(), false);
+    // cout << topo.top() << " ";
+    // DFS(G, N, visited, topo.top());
+            // if (vertex == nd)
+        // {
+        //     break;
+        // }
+            // while (!topo.empty())
+    // {
+    //     cout << topo.top() << " ";
+    //     topo.pop();
+    // }
+    // for (int i = 1; i <= 10; i++)
+            // {
+
+            //     if (distance[vertex][index] + weighted < distance[neighbor][i])
+            //     {
+            //         if (i < 10)
+            //         {
+            //             distance[neighbor][i + 1] = distance[neighbor][i];
+            //         }
+            //         distance[neighbor][i] = distance[vertex][index] + weighted;
+            //         pq.push({distance[neighbor][i], i, neighbor});
+            //         break;
+            //     }
+            // }
+
+               // G[b].emplace_back(a, c);
+    // for (int i = 1; i <= n; i++)
+    // {
+    //     cout << "\nvertex: " << i << endl;
+    //     for (auto [j, k] : G[i])
+    //     {
+    //         cout << "\t" << j << " " << k << endl;
+    //     }
+    // }
+        // for (int i = 0; i < 10; i++)
+                // {
+                //     if (distance[neighbor][i] == D)
+                //     {
+                //         break;
+                //     }
+                // }
+            // for (int i = 0; i <= n; i++)
+            // {
+            //     for (int j = 0; j < k; j++)
+            //     {
+            //         if (distance[i][j] == oo)
+            //         {
+            //             cout << "oo ";
+            //         }
+            //         else
+            //         {
+            //             cout << distance[i][j] << " ";
+            //         }
+            //     }
+            //     cout << endl;
+            // }
+            // cout << endl;
+    // vector<priority_queue<pair<ll, int>, vector<pair<ll, int>>, greatwere>> distance(n + 1);
+// void insertionSort(vector<ll> &arr, ll value)
+// {
+//     // int index = 0;
+//     // while (index < 12 && arr[index] < value)
+//     // {
+//     //     index++;
+//     // }
+//     // if (index == 0)
+//     // {
+//     //     arr[index] = value;
+//     //     return;
+//     // }
+//     // int next = arr[index];
+//     // for (int i = index; index < 10; i++)
+//     // {
+//     //     arr[i] = next;
+//     //     next = arr[i + 1];
+//     //     arr[i + 1] = arr[i];
+//     // }
+//     // arr[++index] = value;
+//     arr.push_back(value);
+//     sort(arr.begin(), arr.end());
+//     arr.pop_back();
+// }
+    // for (ll x : prefixSum)
+    // {
+    //     cout << x << " ";
+    // }
+            // if (!left)
+        // {
+        //     sum = prefixSum[right];
+        // }
+        // else
+        // {
+        //     sum = prefixSum[right] - prefixSum[left - 1];
+        // }
+        // if (right == n - 1)
+        // {
+        //     if (sum > s)
+        //     {
+        //         right--;
+        //     }
+        //     res += (right - left + 2) * (right - left + 1) / 2;
+        //     break;
+        // }
+        // else if (sum > s)
+        // {
+        //     res += (right - left + 1) * (right - left) / 2;
+        //     left++;
+        // }
+        // else
+        // {
+        //     right++;
+        // }
+            // ll sum = 0LL;
+    // int negative = INT_MIN;
+    // for (int x : a)
+    // {
+    //     negative = max(negative, x);
+    //     if (x > 0)
+    //     {
+    //         sum += x;
+    //     }
+    // }
+    // return max(sum, (ll)negative);
+    // vector<int> Min(N, 0);
+    // Min[0] = min(0, a[0]);
+    // for (int i = 1; i < N; i++)
+    // {
+    //     Min[i] = min(Min[i - 1], a[i]);
+    // }
+    // cout << "\nMin: \n";
+    // for (int x : Min)
+    // {
+    //     cout << x << " ";
+    // }
+    // vector<ll> prefix(N);
+    // ll sum = 0LL;
+    // prefix[0] = a[0];
+    // for (int i = 1; i < N; i++)
+    // {
+    //     prefix[i] = prefix[i - 1] + a[i];
+    //     sum = max(sum, prefix[i] - Min[i]);
+    // }
+    // cout << "\nprefix: \n";
+    // for (int x : prefix)
+    // {
+    //     cout << x << " ";
+    // }
+            // cout <<
+        // cin >> a[0];
+        // ll S1 = a[0];
+        // ll S2 = a[0];
+        // for (int& x : a)
+        // {
+        //     cin >> x;
+        // }
+        // for (int i = 0; i < N; i++)
+        // {
+        //     if (a[i] > 0)
+        //     {
+        //         S1 += a[i];
+        //     }
+        // }
+                        // path.push_back(characters[i]);
+                // q.push({move_x, move_y, path});
+                // path.pop_back();
+            // cout << path.size() << endl;
+            // for (char chr : path)
+            // {
+            //     cout << chr;
+            // }            cout << "\nIMPOSSIBLE";
+            // cout << vertex << " " << neighbor << endl;
+            // for (int i = 1; i <= n; i++)
+            // {
+            //     cout <<aren pt[i] << " ";
+            // }
+                // if (BruteForce)
+    // {
+    //     while (q--)
+    //     {
+    //         int a, b, c;
+    //         cin >> a >> b >> c;
+    //         vector<bool> visited(n + 1, false);
+    //         DFS(G, visited, a, c);
+    //         if (visited[b] && a != c && b != c)
+    //         {
+    //             cout << "YES\n";
+    //         }
+    //         else
+    //         {
+    //             cout << "NO\n";
+    //         }
+    //     }
+    // }
+    // else
+    // {
+    // }
+    // const bool BruteForce = false;
+// void DFS(vector<vector<int>> &G, vector<bool> &visited, int vertex, int ban)
+// {
+//     visited[vertex] = true;
+//     for (int neighbor : G[vertex])
+//     {
+//         if (neighbor != ban && !visited[neighbor])
+//         {
+//             DFS(G, visited, neighbor, ban);
+//         }
+//     }
+// }
+// void BFS(vector<vector<int>> &G, vector<bool> &visited, int start, int end, int ban)
+// {
+//     queue<int> Q;
+//     Q.push(start);
+//     visited[start] = true;
+//     while (!Q.empty())
+//     {
+//         int vertex = Q.front();
+//         Q.pop();
+
+//         for (int neighbor : G[vertex])
+//         {
+//             if (neighbor != ban && !visited[neighbor])
+//             {
+//                 Q.push(neighbor);
+//                 visited[neighbor] = true;
+//                 if (neighbor == end)
+//                 {
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+// }
